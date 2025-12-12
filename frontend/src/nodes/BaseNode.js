@@ -46,12 +46,17 @@ export const BaseNode = ({
       {/* Header */}
       {title && (
         <div style={{ 
-          fontWeight: '600', 
-          marginBottom: '8px',
-          fontSize: '14px',
-          color: '#1e293b',
-          borderBottom: '1px solid #e1e8ed',
-          paddingBottom: '6px'
+          fontWeight: '700', 
+          marginBottom: '10px',
+          fontSize: '15px',
+          color: '#111827',
+          borderBottom: '2px solid #e5e7eb',
+          paddingBottom: '8px',
+          letterSpacing: '-0.2px',
+          background: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)',
+          WebkitBackgroundClip: 'text',
+          WebkitTextFillColor: 'transparent',
+          backgroundClip: 'text'
         }}>
           {title}
         </div>

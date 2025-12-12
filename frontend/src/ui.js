@@ -115,10 +115,29 @@ export const PipelineUI = () => {
                 snapGrid={[gridSize, gridSize]}
                 connectionLineType='smoothstep'
             >
-                <Background color="#e1e8ed" gap={gridSize} />
-                <Controls style={{ backgroundColor: '#ffffff', border: '1px solid #e1e8ed', borderRadius: '8px' }} />
+                <defs>
+                    <linearGradient id="edge-gradient" x1="0%" y1="0%" x2="100%" y2="0%">
+                        <stop offset="0%" stopColor="#6366f1" stopOpacity="0.8" />
+                        <stop offset="50%" stopColor="#8b5cf6" stopOpacity="1" />
+                        <stop offset="100%" stopColor="#ec4899" stopOpacity="0.8" />
+                    </linearGradient>
+                </defs>
+                <Background color="#e5e7eb" gap={gridSize} variant="dots" />
+                <Controls 
+                    style={{ 
+                        backgroundColor: '#ffffff', 
+                        border: '1.5px solid #e5e7eb', 
+                        borderRadius: '12px',
+                        boxShadow: '0 4px 12px rgba(0, 0, 0, 0.1)'
+                    }} 
+                />
                 <MiniMap 
-                    style={{ backgroundColor: '#ffffff', border: '1px solid #e1e8ed' }}
+                    style={{ 
+                        backgroundColor: '#ffffff', 
+                        border: '1.5px solid #e5e7eb',
+                        borderRadius: '12px',
+                        boxShadow: '0 4px 12px rgba(0, 0, 0, 0.1)'
+                    }}
                     nodeColor={(node) => {
                         switch(node.type) {
                             case 'customInput': return '#10b981';

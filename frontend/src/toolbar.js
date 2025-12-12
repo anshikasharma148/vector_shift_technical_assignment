@@ -6,16 +6,22 @@ export const PipelineToolbar = () => {
 
     return (
         <div style={{ 
-            padding: '20px', 
-            backgroundColor: '#ffffff',
-            borderBottom: '2px solid #e1e8ed',
-            boxShadow: '0 2px 4px rgba(0, 0, 0, 0.05)'
+            padding: '24px', 
+            background: 'linear-gradient(180deg, #ffffff 0%, #fafbfc 100%)',
+            borderBottom: '2px solid #e5e7eb',
+            boxShadow: '0 4px 12px rgba(0, 0, 0, 0.06)',
+            animation: 'slideIn 0.6s ease-out'
         }}>
             <h2 style={{ 
-                margin: '0 0 16px 0', 
-                fontSize: '18px', 
-                fontWeight: '600',
-                color: '#1e293b'
+                margin: '0 0 20px 0', 
+                fontSize: '20px', 
+                fontWeight: '700',
+                color: '#111827',
+                letterSpacing: '-0.3px',
+                background: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)',
+                WebkitBackgroundClip: 'text',
+                WebkitTextFillColor: 'transparent',
+                backgroundClip: 'text'
             }}>
                 Node Palette
             </h2>
