@@ -21,6 +21,8 @@ export const InputNode = ({ id, data }) => {
       data={data}
       title="Input"
       sourceHandles={[{ id: `${id}-value` }]}
+      width={200}
+      height={140}
     >
       <div style={{ display: 'flex', flexDirection: 'column', gap: '8px' }}>
         <label style={{ display: 'flex', flexDirection: 'column', gap: '4px', fontSize: '12px' }}>

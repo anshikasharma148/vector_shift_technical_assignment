@@ -17,6 +17,8 @@ export const TransformNode = ({ id, data }) => {
       title="Transform"
       targetHandles={[{ id: `${id}-input` }]}
       sourceHandles={[{ id: `${id}-output` }]}
+      width={200}
+      height={130}
     >
       <div style={{ display: 'flex', flexDirection: 'column', gap: '8px' }}>
         <label style={{ display: 'flex', flexDirection: 'column', gap: '4px', fontSize: '12px' }}>

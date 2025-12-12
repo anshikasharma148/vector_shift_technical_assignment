@@ -15,7 +15,7 @@ export const MergeNode = ({ id, data }) => {
       ]}
       sourceHandles={[{ id: `${id}-output` }]}
       width={200}
-      height={140}
+      height={150}
     >
       <div style={{ display: 'flex', flexDirection: 'column', gap: '8px' }}>
         <div style={{ fontSize: '12px', color: '#333' }}>

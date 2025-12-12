@@ -9,7 +9,7 @@ export const TextNode = ({ id, data, width: nodeWidthProp, height: nodeHeightPro
   const [currText, setCurrText] = useState(data?.text || '{{input}}');
   const [parsedVariables, setParsedVariables] = useState([]);
   const [nodeWidth, setNodeWidth] = useState(nodeWidthProp || 200);
-  const [nodeHeight, setNodeHeight] = useState(nodeHeightProp || 80);
+  const [nodeHeight, setNodeHeight] = useState(nodeHeightProp || 120);
   const updateNodeField = useStore((state) => state.updateNodeField);
 
   // Parse variables from text
@@ -39,8 +39,9 @@ export const TextNode = ({ id, data, width: nodeWidthProp, height: nodeHeightPro
     // Calculate width: min 200, max 400, based on content
     const calculatedWidth = Math.min(Math.max(maxLineLength * 8 + 40, 200), 400);
     
-    // Calculate height: min 80, based on number of lines
-    const calculatedHeight = Math.max(numLines * 24 + 60, 80);
+    // Calculate height: min 120 (to accommodate label + textarea), based on number of lines
+    // Base height: 50 (header + padding) + 20 (label) + textarea height
+    const calculatedHeight = Math.max(numLines * 24 + 90, 120);
     
     setNodeWidth(calculatedWidth);
     setNodeHeight(calculatedHeight);
@@ -58,25 +59,18 @@ export const TextNode = ({ id, data, width: nodeWidthProp, height: nodeHeightPro
 
   return (
     <div style={{ position: 'relative', width: nodeWidth, height: nodeHeight }}>
-      {/* Dynamic target handles for parsed variables */}
-      {parsedVariables.map((varName, index) => {
-        const totalVars = parsedVariables.length;
-        const position = totalVars === 1 ? '50%' : `${((index + 1) * 100) / (totalVars + 1)}%`;
-        return (
-          <Handle
-            key={`${id}-${varName}`}
-            type="target"
-            position={Position.Left}
-            id={`${id}-${varName}`}
-            style={{ top: position }}
-          />
-        );
-      })}
-
       <BaseNode
         id={id}
         data={data}
         title="Text"
+        targetHandles={parsedVariables.map((varName, index) => {
+          const totalVars = parsedVariables.length;
+          const position = totalVars === 1 ? '50%' : `${((index + 1) * 100) / (totalVars + 1)}%`;
+          return {
+            id: `${id}-${varName}`,
+            style: { top: position }
+          };
+        })}
         sourceHandles={[{ id: `${id}-output` }]}
         width={nodeWidth}
         height={nodeHeight}

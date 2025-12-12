@@ -22,7 +22,7 @@ export const SplitNode = ({ id, data }) => {
         { id: `${id}-output3`, style: { top: '70%' } }
       ]}
       width={200}
-      height={140}
+      height={150}
     >
       <div style={{ display: 'flex', flexDirection: 'column', gap: '8px' }}>
         <label style={{ display: 'flex', flexDirection: 'column', gap: '4px', fontSize: '12px' }}>

@@ -13,6 +13,8 @@ export const LLMNode = ({ id, data }) => {
         { id: `${id}-prompt`, style: { top: `${200/3}%` } }
       ]}
       sourceHandles={[{ id: `${id}-response` }]}
+      width={200}
+      height={100}
     >
       <div style={{ fontSize: '12px', color: '#666' }}>
         This is a LLM.

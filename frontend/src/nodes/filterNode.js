@@ -21,7 +21,7 @@ export const FilterNode = ({ id, data }) => {
         { id: `${id}-filtered`, style: { top: '70%' } }
       ]}
       width={220}
-      height={120}
+      height={140}
     >
       <div style={{ display: 'flex', flexDirection: 'column', gap: '8px' }}>
         <label style={{ display: 'flex', flexDirection: 'column', gap: '4px', fontSize: '12px' }}>

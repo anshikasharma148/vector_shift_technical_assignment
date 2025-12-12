@@ -50,6 +50,7 @@ export const SubmitButton = () => {
 
     const closeAlert = () => {
         setAlertData(null);
+        setLoading(false);
     };
 
     return (
@@ -200,18 +201,35 @@ export const SubmitButton = () => {
                         )}
                         
                         <button
-                            onClick={closeAlert}
+                            type="button"
+                            onClick={(e) => {
+                                e.preventDefault();
+                                e.stopPropagation();
+                                closeAlert();
+                            }}
                             style={{
-                                marginTop: '20px',
+                                marginTop: '24px',
                                 width: '100%',
-                                padding: '10px',
-                                backgroundColor: '#6366f1',
+                                padding: '12px 24px',
+                                background: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)',
                                 color: 'white',
                                 border: 'none',
-                                borderRadius: '8px',
-                                fontSize: '14px',
+                                borderRadius: '10px',
+                                fontSize: '15px',
                                 fontWeight: '600',
-                                cursor: 'pointer'
+                                cursor: 'pointer',
+                                transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)',
+                                boxShadow: '0 4px 12px rgba(99, 102, 241, 0.3)',
+                                position: 'relative',
+                                zIndex: 10
+                            }}
+                            onMouseEnter={(e) => {
+                                e.currentTarget.style.transform = 'translateY(-2px)';
+                                e.currentTarget.style.boxShadow = '0 6px 16px rgba(99, 102, 241, 0.4)';
+                            }}
+                            onMouseLeave={(e) => {
+                                e.currentTarget.style.transform = 'translateY(0)';
+                                e.currentTarget.style.boxShadow = '0 4px 12px rgba(99, 102, 241, 0.3)';
                             }}
                         >
                             Close
